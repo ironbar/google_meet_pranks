@@ -10,3 +10,4 @@ to prank and add some fun in the office.
 - <https://developer.chrome.com/docs/extensions/mv3/getstarted/tut-focus-mode/>
 - <https://developer.chrome.com/docs/extensions/mv3/user_interface/#popup>
 - <https://github.com/GoogleChrome/chrome-extensions-samples/tree/main/functional-samples/sample.water_alarm_notification>
+- <https://github.com/macro6461/popup-content-script/tree/main>
