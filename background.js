@@ -75,14 +75,19 @@ function prankMode(){
 // });
 
 
+// chrome.notifications.onButtonClicked.addListener(async () => {
+//   const item = await chrome.storage.sync.get(["prank_mode"]);
+//   console.log(item.prank_mode);
+//   chrome.action.setBadgeText({ text: item.prank_mode });
+// //   if (item.prank_mode === "crazy_reactions") {
+// //     chrome.scripting.executeScript({
+// //         target : {tabId : tab.id},
+// //         func : prankMode,
+// //         });
+// //     }
+// });
+
 chrome.notifications.onButtonClicked.addListener(async () => {
-  const item = await chrome.storage.sync.get(["prank_mode"]);
-  console.log(item.prank_mode);
-  chrome.action.setBadgeText({ text: item.prank_mode });
-//   if (item.prank_mode === "crazy_reactions") {
-//     chrome.scripting.executeScript({
-//         target : {tabId : tab.id},
-//         func : prankMode,
-//         });
-//     }
+  const item = await chrome.storage.sync.get(['minutes']);
+  chrome.action.setBadgeText({ text: 'ON' });
 });
