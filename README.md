@@ -5,6 +5,11 @@ Prank your teammates on Google Meet with this extension!
 The goal of this repo is to learn to create chrome extensions and at the same time provide tools
 to prank and add some fun in the office.
 
+Currently this extension can:
+
+- Kick out everyone out of the meeting
+- Send a crazy number of reactions (thumbs up, emojis...)
+
 ## Sources of inspiration
 
 - <https://developer.chrome.com/docs/extensions/mv3/getstarted/tut-focus-mode/>
