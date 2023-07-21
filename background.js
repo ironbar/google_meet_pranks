@@ -40,27 +40,49 @@ function prankMode(){
     }
 }
 
-chrome.action.onClicked.addListener(async (tab) => {
-  if (tab.url.startsWith('https://meet.google.com/')) {
-    // We retrieve the action badge to check if the extension is 'ON' or 'OFF'
-    const prevState = await chrome.action.getBadgeText({ tabId: tab.id });
-    // Next state will always be the opposite
-    const nextState = prevState === 'ON' ? 'OFF' : 'ON';
+// chrome.action.onClicked.addListener(async (tab) => {
+//   if (tab.url.startsWith('https://meet.google.com/')) {
+//     // We retrieve the action badge to check if the extension is 'ON' or 'OFF'
+//     const prevState = await chrome.action.getBadgeText({ tabId: tab.id });
+//     // Next state will always be the opposite
+//     const nextState = prevState === 'ON' ? 'OFF' : 'ON';
 
-    // Set the action badge to the next state
-    await chrome.action.setBadgeText({
-      tabId: tab.id,
-      text: nextState
-    });
+//     // Set the action badge to the next state
+//     await chrome.action.setBadgeText({
+//       tabId: tab.id,
+//       text: nextState
+//     });
 
-    if (nextState === 'ON') {
-      chrome.scripting.executeScript({
-        target : {tabId : tab.id},
-        func : prankMode,
-        });
-    } else if (nextState === 'OFF') {
-    }
-  }
+//     if (nextState === 'ON') {
+//       chrome.scripting.executeScript({
+//         target : {tabId : tab.id},
+//         func : prankMode,
+//         });
+//     } else if (nextState === 'OFF') {
+//     }
+//   }
+// });
+
+// chrome.alarms.onAlarm.addListener(() => {
+//   chrome.action.setBadgeText({ text: "" });
+//   chrome.notifications.create({
+//     type: "basic",
+//     title: "Time to Hydrate",
+//     message: "Everyday I'm Guzzlin'!",
+//     buttons: [{ title: "Keep it Flowing." }],
+//     priority: 0,
+//   });
+// });
+
+
+chrome.notifications.onButtonClicked.addListener(async () => {
+  const item = await chrome.storage.sync.get(["prank_mode"]);
+  console.log(item.prank_mode);
+  chrome.action.setBadgeText({ text: item.prank_mode });
+//   if (item.prank_mode === "crazy_reactions") {
+//     chrome.scripting.executeScript({
+//         target : {tabId : tab.id},
+//         func : prankMode,
+//         });
+//     }
 });
-
-
