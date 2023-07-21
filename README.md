@@ -1,5 +1,7 @@
 # Google Chrome Extension: Google Meet Pranks
 
+![screenshot](screenshots/google_meet_prank_screenshot.png)
+
 Prank your teammates on Google Meet with this extension!
 
 The goal of this repo is to learn to create chrome extensions and at the same time provide tools
