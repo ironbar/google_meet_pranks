@@ -7,8 +7,6 @@ function crazyReactions() {
     }
   }
   const reactions_menu = document.querySelector('[aria-label="Reactions"]');
-  getDeepFirstChild(reactions_menu.childNodes[0]).click();
-
   let i = 0;
   for (let j = 0; j < 2; j++) {
     for (let node of reactions_menu.childNodes) {

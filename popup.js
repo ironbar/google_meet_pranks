@@ -1,5 +1,7 @@
+// dumb comment
+
 async function runModule(module_name){
-  let queryOptions = { active: true };
+  let queryOptions = { active: true, lastFocusedWindow: true };
   let [tab] = await chrome.tabs.query(queryOptions);
   chrome.scripting.executeScript({
     target: { tabId: tab.id },
