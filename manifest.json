@@ -12,5 +12,13 @@
   "action": {
     "default_popup": "popup.html"
   },
-  "permissions": ["scripting", "activeTab"]
+  "permissions": ["scripting", "activeTab"],
+  "content_scripts": [
+    {
+      "js": ["content.js"],
+      "matches": [
+        "https://meet.google.com/*"
+      ]
+    }
+  ]
 }
