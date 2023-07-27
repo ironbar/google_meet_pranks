@@ -15,7 +15,7 @@
   "permissions": ["scripting", "activeTab"],
   "content_scripts": [
     {
-      "js": ["content.js"],
+      "js": ["scripts/content.js"],
       "matches": [
         "https://meet.google.com/*"
       ]
