@@ -15,4 +15,5 @@ function crazyReactions() {
     }
   }
 }
+console.log("Crazy reactions!")
 crazyReactions();
