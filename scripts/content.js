@@ -6,18 +6,21 @@ function getDeepFirstChild(element) {
   }
 }
 
+
+function clickOnFirstAvailableButton(names) {
+  for (let name of names) {
+    button = document.querySelector('[aria-label="' + name + '"]');
+    if (button) {
+      getDeepFirstChild(button).click();
+      return;
+    }
+  }
+}
+
+
 function raiseHand() {
   console.log("Raise hand");
-  raise_hand_button = document.querySelector('[aria-label="Raise hand (Ctrl + alt + h)"]');
-  if (raise_hand_button) {
-    getDeepFirstChild(raise_hand_button).click();
-    return;
-  }
-  raise_hand_button = document.querySelector('[aria-label="Lower hand (Ctrl + alt + h)"]');
-  if (raise_hand_button) {
-    getDeepFirstChild(raise_hand_button).click();
-    return;
-  }
+  clickOnFirstAvailableButton(["Raise hand (Ctrl + alt + h)", "Lower hand (Ctrl + alt + h)"]);
 }
 
 function thumbsDown() {
@@ -46,7 +49,7 @@ function doRandomActionsOnGoogleMeet() {
   let delay_m = initial_delay_m;
   let n_actions = 10;
   for (let i = 0; i < n_actions; i++) {
-    setTimeout(executeRandomFunction, delay_m * 60000);
+    setTimeout(executeRandomFunction, delay_m * 1000);
     console.log("Next action in " + delay_m + " minutes");
     delay_m += randomIntFromInterval(1, 10);
   }
