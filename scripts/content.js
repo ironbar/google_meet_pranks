@@ -41,16 +41,15 @@ function executeRandomFunction(functions) {
 }
 
 
-
-let initial_delay = randomIntFromInterval(1, 3);
-let delay = initial_delay;
-let n_actions = 10;
-
-for (let i = 0; i < n_actions; i++) {
-  delay += randomIntFromInterval(1, 3);
-  setTimeout(
-    executeRandomFunction,
-    delay * 1000
-  );
-  console.log("I will raise the hand in " + delay + " seconds.");
+function doRandomActionsOnGoogleMeet() {
+  let initial_delay_m = randomIntFromInterval(5, 10);
+  let delay_m = initial_delay_m;
+  let n_actions = 10;
+  for (let i = 0; i < n_actions; i++) {
+    setTimeout(executeRandomFunction, delay_m * 60000);
+    console.log("Next action in " + delay_m + " minutes");
+    delay_m += randomIntFromInterval(1, 10);
+  }
 }
+
+doRandomActionsOnGoogleMeet();
