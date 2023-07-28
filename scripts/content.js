@@ -20,17 +20,39 @@ function clickOnFirstAvailableButton(names) {
 
 function toggleHand() {
   console.log("Toggling hand");
-  clickOnFirstAvailableButton(["Raise hand (Ctrl + alt + h)", "Lower hand (Ctrl + alt + h)"]);
+  let button_names = [
+    "Raise hand (Ctrl + alt + h)",
+    "Lower hand (Ctrl + alt + h)",
+    "Levantar la mano (ctrl + alt + h)",
+    "Bajar la mano (ctrl + alt + h)",
+  ];
+  clickOnFirstAvailableButton(button_names);
 }
 
 function toggleMicrophone() {
   console.log("Toggling microphone");
-  clickOnFirstAvailableButton(["Turn off microphone (CTRL + D)", "Turn on microphone (CTRL + D)"]);
+  let button_names = [
+    "Turn off microphone (CTRL + D)",
+    "Turn on microphone (CTRL + D)",
+    "Desactivar micrófono (Ctrl + D)",
+    "Activar micrófono (Ctrl + D)",
+    "Desactivar micrófono (Ctrl\u00A0+\u00A0D)", //\u00A0 is &nbsp;
+    "Activar micrófono (Ctrl\u00A0+\u00A0D)",
+  ];
+  clickOnFirstAvailableButton(button_names);
 }
 
 function toggleCamera() {
   console.log("Toggling camera");
-  clickOnFirstAvailableButton(["Turn on camera (CTRL + E)", "Turn off camera (CTRL + E)"]);
+  let button_names = [
+    "Turn on camera (CTRL + E)",
+    "Turn off camera (CTRL + E)",
+    "Desactivar cámara (Ctrl + E)",
+    "Activar cámara (Ctrl + E)",
+    "Desactivar cámara (Ctrl\u00A0+\u00A0E)",
+    "Activar cámara (Ctrl\u00A0+\u00A0E)",
+  ];
+  clickOnFirstAvailableButton(button_names);
 }
 
 
