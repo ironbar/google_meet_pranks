@@ -6,7 +6,7 @@ function crazyReactions() {
       return element;
     }
   }
-  const reactions_menu = document.querySelector('[aria-label="Reactions"]');
+  const reactions_menu = document.querySelector('[aria-label="Reactions"]') || document.querySelector('[aria-label="Reacciones"]');
   let i = 0;
   for (let j = 0; j < 2; j++) {
     for (let node of reactions_menu.childNodes) {
