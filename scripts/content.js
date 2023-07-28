@@ -58,10 +58,16 @@ function toggleCamera() {
 
 function thumbsDown() {
     console.log("Thumbs down");
-    reactions_menu = document.querySelector('[aria-label="Reactions"]');
-    if (reactions_menu) {
-        getDeepFirstChild(reactions_menu.childNodes[8]).click();
-        return;
+    let menu_names = [
+      "Reactions",
+      "Reacciones",
+    ];
+    for (let name of menu_names) {
+      reactions_menu = document.querySelector('[aria-label="' + name + '"]');
+      if (reactions_menu) {
+          getDeepFirstChild(reactions_menu.childNodes[8]).click();
+          return;
+      }
     }
 }
 
@@ -70,7 +76,7 @@ function randomIntFromInterval(min, max) {
 }
 
 
-function executeRandomFunction(functions) {
+function executeRandomFunction() {
   var functions = [toggleHand, thumbsDown, toggleMicrophone, toggleCamera];
   var index = randomIntFromInterval(0, functions.length - 1);
   functions[index]();
