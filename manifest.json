@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Google Meet Pranks",
   "description": "Prank your teammates on Google Meet with this extension!",
-  "version": "0.2",
+  "version": "0.3",
   "icons": {
     "16": "images/icon-16.png",
     "32": "images/icon-32.png",
